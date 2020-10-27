@@ -10,6 +10,7 @@
       <PackageReference Include="Emgu.CV" Version="4.4.0.4099" />
       <PackageReference Include="Emgu.CV.Bitmap" Version="4.4.0.4099" />
       <PackageReference Include="Emgu.CV.runtime.windows" Version="4.4.0.4099" />
+      <PackageReference Include="Emgu.CV.UI" Version="4.4.0.4099" />
       <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
       <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
     </ItemGroup>

@@ -1,0 +1,63 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "C:\\Users\\salihogun\\Desktop\\FaceRecognition\\FaceRecognition.csproj",
+    "projectName": "FaceRecognition",
+    "projectPath": "C:\\Users\\salihogun\\Desktop\\FaceRecognition\\FaceRecognition.csproj",
+    "outputPath": "C:\\Users\\salihogun\\Desktop\\FaceRecognition\\obj\\",
+    "projectStyle": "PackageReference",
+    "originalTargetFrameworks": [
+      "net48"
+    ],
+    "sources": {
+      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "net48": {
+        "projectReferences": {}
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "net48": {
+      "dependencies": {
+        "Emgu.CV": {
+          "target": "Package",
+          "version": "[4.4.0.4099, )"
+        },
+        "Emgu.CV.Bitmap": {
+          "target": "Package",
+          "version": "[4.4.0.4099, )"
+        },
+        "Emgu.CV.UI": {
+          "target": "Package",
+          "version": "[4.4.0.4099, )"
+        },
+        "Emgu.CV.runtime.windows": {
+          "target": "Package",
+          "version": "[4.4.0.4099, )"
+        },
+        "JetBrains.Annotations": {
+          "target": "Package",
+          "version": "[2020.1.0, )"
+        },
+        "Prism.DryIoc": {
+          "target": "Package",
+          "version": "[8.0.0.1909, )"
+        }
+      },
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+    }
+  },
+  "runtimes": {
+    "win7-x86": {
+      "#import": []
+    }
+  }
+}

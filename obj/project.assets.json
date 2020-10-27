@@ -47,6 +47,21 @@
           "build/Emgu.CV.runtime.windows.targets": {}
         }
       },
+      "Emgu.CV.UI/4.4.0.4099": {
+        "type": "package",
+        "dependencies": {
+          "Emgu.CV.Bitmap": "[4.4.0, 4.4.1)"
+        },
+        "frameworkAssemblies": [
+          "System.Windows.Forms"
+        ],
+        "compile": {
+          "lib/net461/Emgu.CV.Platform.NetFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Emgu.CV.Platform.NetFramework.dll": {}
+        }
+      },
       "JetBrains.Annotations/2020.1.0": {
         "type": "package",
         "compile": {
@@ -218,6 +233,21 @@
         },
         "build": {
           "build/Emgu.CV.runtime.windows.targets": {}
+        }
+      },
+      "Emgu.CV.UI/4.4.0.4099": {
+        "type": "package",
+        "dependencies": {
+          "Emgu.CV.Bitmap": "[4.4.0, 4.4.1)"
+        },
+        "frameworkAssemblies": [
+          "System.Windows.Forms"
+        ],
+        "compile": {
+          "lib/net461/Emgu.CV.Platform.NetFramework.dll": {}
+        },
+        "runtime": {
+          "lib/net461/Emgu.CV.Platform.NetFramework.dll": {}
         }
       },
       "JetBrains.Annotations/2020.1.0": {
@@ -431,6 +461,23 @@
         "emgu.cv.runtime.windows.4.4.0.4099.nupkg.sha512",
         "emgu.cv.runtime.windows.nuspec",
         "icon.png"
+      ]
+    },
+    "Emgu.CV.UI/4.4.0.4099": {
+      "sha512": "L4R4LJsSAd5h+vz8N4GmRvh7EgL8+IDkYLyVH05ZlboJ4K+Xv/uAAxct+4QJWjq20eMj5QnhptHO51Krjr3a2w==",
+      "type": "package",
+      "path": "emgu.cv.ui/4.4.0.4099",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "emgu.cv.ui.4.4.0.4099.nupkg.sha512",
+        "emgu.cv.ui.nuspec",
+        "icon.png",
+        "lib/net461/Emgu.CV.Platform.NetFramework.dll",
+        "lib/net461/Emgu.CV.Platform.NetFramework.xml",
+        "lib/netcoreapp3.1/Emgu.CV.Platform.NetCore.dll",
+        "lib/netcoreapp3.1/Emgu.CV.Platform.NetCore.xml"
       ]
     },
     "JetBrains.Annotations/2020.1.0": {
@@ -748,6 +795,7 @@
     ".NETFramework,Version=v4.8": [
       "Emgu.CV >= 4.4.0.4099",
       "Emgu.CV.Bitmap >= 4.4.0.4099",
+      "Emgu.CV.UI >= 4.4.0.4099",
       "Emgu.CV.runtime.windows >= 4.4.0.4099",
       "JetBrains.Annotations >= 2020.1.0",
       "Prism.DryIoc >= 8.0.0.1909"
@@ -795,6 +843,10 @@
             "version": "[4.4.0.4099, )"
           },
           "Emgu.CV.Bitmap": {
+            "target": "Package",
+            "version": "[4.4.0.4099, )"
+          },
+          "Emgu.CV.UI": {
             "target": "Package",
             "version": "[4.4.0.4099, )"
           },

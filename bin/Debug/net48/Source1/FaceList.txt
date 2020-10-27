@@ -1,0 +1,9 @@
+face1:salih
+face2:kisi1
+face3:kisi2
+face4:kisi3
+face5:stave
+face6:kisi6
+face7:kisi7
+face8:kisi8
+face9:

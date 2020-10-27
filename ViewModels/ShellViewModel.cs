@@ -1,23 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Drawing.Imaging;
+
 using System.IO;
 using System.Windows;
-using System.Windows.Media;
+
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using Emgu.CV;
+using Emgu.CV.Cuda;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Face;
 using Emgu.CV.Structure;
 using Emgu.CV.Util;
 using JetBrains.Annotations;
-using Microsoft.Win32;
-using Microsoft.Xaml.Behaviors;
+
 using Prism.Commands;
 using Prism.Mvvm;
-using Microsoft.VisualBasic;
+
 using Interaction = Microsoft.VisualBasic.Interaction;
 
 namespace FaceRecognition.ViewModels
@@ -47,30 +47,12 @@ namespace FaceRecognition.ViewModels
             {
                 cameraCapture = value;
 
-                DisplayedImage = Convert(cameraCapture);
+                DisplayedImage = Convert.ConvertToBitmapImage(cameraCapture);
                 
 
             }
         }
-        public BitmapImage Convert(Image img)
-        {
-            using (var memory = new MemoryStream())
-            {
-                img.Save(memory, ImageFormat.Png);
-                memory.Position = 0;
-
-                var bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.StreamSource = memory;
-                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                bitmapImage.EndInit();
-
-                return bitmapImage;
-            }
-        } 
-
-
-
+        
         private Bitmap cameraCaptureFace;
         public Bitmap CameraCaptureFace
         {
@@ -83,7 +65,6 @@ namespace FaceRecognition.ViewModels
 
             }
         }
-
 
 
         public ShellViewModel(Config config)
@@ -99,9 +80,20 @@ namespace FaceRecognition.ViewModels
             if (imageList.Size != 0)
             {
                 //Eigen Face Algorithm
+               
                 FaceRecognizer.PredictionResult result = recognizer.Predict(detectedFace.Resize(100, 100, Inter.Cubic));
-                FaceName = nameList[result.Label];
-                cameraCaptureFace = detectedFace.ToBitmap();
+                if (result.Label  == -1)
+                {
+                    FaceName = "tanımsız";
+                }
+                else
+                {
+                     FaceName = nameList[result.Label];
+                                    cameraCaptureFace = detectedFace.ToBitmap();
+                }
+               
+                
+                
             }
             else
             {
@@ -124,7 +116,7 @@ namespace FaceRecognition.ViewModels
            
             if (!File.Exists(config1.HaarCascadePath))
             {
-                var text = "Cannot find Haar cascade data file:\n\n";
+                var text = " Haar cascade data dosyası bulunamadı:\n\n";
                 text += config1.HaarCascadePath;
                 MessageBox.Show(
                     text,
@@ -185,17 +177,7 @@ namespace FaceRecognition.ViewModels
             }
         }
 
-        public string Title
-        {
-            get => title;
-            set => SetProperty(ref title, value);
-        }
-
-        public string FaceName
-        {
-            get => faceName;
-            set => SetProperty(ref faceName, value);
-        }
+       
 
         public DelegateCommand OpenViewFileCommand => new DelegateCommand(OnOpenViewFileCommand);
         public DelegateCommand AddFaceCommand => new DelegateCommand(OnAddFace);
@@ -212,12 +194,12 @@ namespace FaceRecognition.ViewModels
             try
             {
                 var grayFrame = bgrFrame.Convert<Gray, byte>();
-                var faces = haarCascade.DetectMultiScale(grayFrame , 1.2 , 10, new System.Drawing.Size(50, 50), new System.Drawing.Size(200, 200));
+                var faces = haarCascade.DetectMultiScale(grayFrame);
 
                 FaceName = "No face detected";
                 foreach (var face in faces)
                 {
-                    bgrFrame.Draw(face, new Bgr(255, 255, 0), 2);
+                    bgrFrame.Draw(face, new Bgr(0, 0, 255), 2);
                     detectedFace = bgrFrame.Copy(face).Convert<Gray, byte>();
                     FaceRecognition();
                     break;
@@ -237,39 +219,40 @@ namespace FaceRecognition.ViewModels
 
         private void OnAddFace()
         {
+          
             if (detectedFace == null)
             {
                 MessageBox.Show("No face detected.");
                 return;
             }
-          
+
+           
             AddNewFace(config);
+            
+          
          
         }
 
-        public void AddNewFace(Config config)
-        {
-            detectedFace = detectedFace.Resize(100, 100, Inter.Cubic);
-
-
-            
-            detectedFace.Save(config.FacePhotoPath + "face" + (faceList.Count + 1) + config.ImageFileExtension);
-            StreamWriter writer = new StreamWriter(config.FaceListTextFile, true);
-
-            string personName = Interaction.InputBox("İsim" , "Yeni Yüz Ekle");
-            writer.WriteLine(String.Format("face{0}:{1}", (faceList.Count + 1), personName));
-            writer.Close();
-            GetFacesList(config);
-            MessageBox.Show("Successful.");
-        }
+      
         private void FaceRecognition()
         {
             if (imageList.Size != 0)
             {
-                //Eigen Face Algorithm
-                FaceRecognizer.PredictionResult result = recognizer.Predict(detectedFace.Resize(100, 100, Inter.Cubic));
-                FaceName = nameList[result.Label];
-                CameraCapture = detectedFace.ToBitmap();
+              
+                      //Eigen Face Algorithm
+                     FaceRecognizer.PredictionResult result = recognizer.Predict(detectedFace.Resize(100, 100, Inter.Cubic));
+                     if (result.Label == 0)
+                     {
+                         FaceName = "tanımsız";
+                     }
+                     else
+                     {
+                            FaceName = nameList[result.Label];
+                                              CameraCapture = detectedFace.ToBitmap();
+                     }
+                  
+                
+              
             }
             else
             {
@@ -283,13 +266,44 @@ namespace FaceRecognition.ViewModels
             get => displayedImage;
             set => SetProperty(ref displayedImage, value);
         }
-        private BitmapImage displayedImageFace;
-        public BitmapImage DisplayedImageFace
+   
+
+        public void AddNewFace(Config config)
         {
-            get => displayedImageFace;
-            set => SetProperty(ref displayedImageFace, value);
+            detectedFace = detectedFace.Resize(100, 100, Inter.Cubic);
+
+
+         
+                detectedFace.Save(config.FacePhotoPath + "face" + (faceList.Count + 1) + config.ImageFileExtension);
+            
+
+            StreamWriter writer = new StreamWriter(config.FaceListTextFile, true);
+
+            string personName = Interaction.InputBox("İsim", "Yeni Yüz Ekle");
+            
+                writer.WriteLine(String.Format("face{0}:{1}", (faceList.Count + 1), personName));
+
+            
+            writer.Close();
+            GetFacesList(config);
+            MessageBox.Show("Successful.");
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+
+
         }
 
+        public string Title
+        {
+            get => title;
+            set => SetProperty(ref title, value);
+        }
+
+        public string FaceName
+        {
+            get => faceName;
+            set => SetProperty(ref faceName, value);
+        }
 
     }
 }

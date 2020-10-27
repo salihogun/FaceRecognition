@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9oAfQ9VXbbU8XANJpxyQp9bcJDGJDJi9XT1nUT8mfZtqzMHQ0jNE85FGdSAGUFdJeeyM2S4j5dJbXiLIVSEtqg==",
+  "dgSpecHash": "whuMxQyoPEF2uPe2lVXYFUCk3Ua3f/JSP+YT0+Og3GmeoyfVX2WRPxj1nsiZP1nhmhQullARP7p8pXuKD0XJUg==",
   "success": true,
   "projectFilePath": "C:\\Users\\salihogun\\Desktop\\FaceRecognition\\FaceRecognition.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\salihogun\\.nuget\\packages\\emgu.cv\\4.4.0.4099\\emgu.cv.4.4.0.4099.nupkg.sha512",
     "C:\\Users\\salihogun\\.nuget\\packages\\emgu.cv.bitmap\\4.4.0.4099\\emgu.cv.bitmap.4.4.0.4099.nupkg.sha512",
     "C:\\Users\\salihogun\\.nuget\\packages\\emgu.cv.runtime.windows\\4.4.0.4099\\emgu.cv.runtime.windows.4.4.0.4099.nupkg.sha512",
+    "C:\\Users\\salihogun\\.nuget\\packages\\emgu.cv.ui\\4.4.0.4099\\emgu.cv.ui.4.4.0.4099.nupkg.sha512",
     "C:\\Users\\salihogun\\.nuget\\packages\\jetbrains.annotations\\2020.1.0\\jetbrains.annotations.2020.1.0.nupkg.sha512",
     "C:\\Users\\salihogun\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
     "C:\\Users\\salihogun\\.nuget\\packages\\prism.core\\8.0.0.1909\\prism.core.8.0.0.1909.nupkg.sha512",

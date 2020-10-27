@@ -12,7 +12,7 @@ namespace FaceRecognition
             o.RegisterInstance(
                 new Config
                 {
-                    TimerResponseValue = 500,
+                    TimerResponseValue = 50,
                     ImageFileExtension = ".bmp",
                     ActiveCameraIndex = 0,
                     FacePhotoPath = "Source\\Faces\\",

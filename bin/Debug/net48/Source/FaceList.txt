@@ -1,2 +1,3 @@
-face1:kisi
-face2:salih
+face1:salih
+face2:mahmut
+face3:chan

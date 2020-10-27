@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[4.4.0.4099, )"
             },
+            "Emgu.CV.UI": {
+              "target": "Package",
+              "version": "[4.4.0.4099, )"
+            },
             "Emgu.CV.runtime.windows": {
               "target": "Package",
               "version": "[4.4.0.4099, )"

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\salihogun\.nuget\packages\emgu.cv.runtime.windows\4.4.0.4099\build\x64" t="Include">
+      <e p="concrt140.dll" t="Include" />
+      <e p="cvextern.dll" t="Include" />
+      <e p="msvcp140.dll" t="Include" />
+      <e p="msvcp140_1.dll" t="Include" />
+      <e p="msvcp140_2.dll" t="Include" />
+      <e p="msvcp140_codecvt_ids.dll" t="Include" />
+      <e p="opencv_videoio_ffmpeg440_64.dll" t="Include" />
+      <e p="vcruntime140.dll" t="Include" />
+      <e p="vcruntime140_1.dll" t="Include" />
+    </e>
+    <e p="C:\Users\salihogun\.nuget\packages\emgu.cv.runtime.windows\4.4.0.4099\build\x86" t="Include">
+      <e p="concrt140.dll" t="Include" />
+      <e p="cvextern.dll" t="Include" />
+      <e p="msvcp140.dll" t="Include" />
+      <e p="msvcp140_1.dll" t="Include" />
+      <e p="msvcp140_2.dll" t="Include" />
+      <e p="msvcp140_codecvt_ids.dll" t="Include" />
+      <e p="opencv_videoio_ffmpeg440.dll" t="Include" />
+      <e p="vcruntime140.dll" t="Include" />
+    </e>
+    <e p="C:\Users\salihogun\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\salihogun\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_FaceRecognition.1346990987.00" t="ExcludeRecursive" />
+    <e p="C:\Users\salihogun\Desktop\FaceRecognition" t="IncludeRecursive">
+      <e p="App.xaml" t="Include" />
+      <e p="App.xaml.cs" t="Include" />
+      <e p="AssemblyInfo.cs" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Config.cs" t="Include" />
+      <e p="Convert.cs" t="Include" />
+      <e p="FaceData.cs" t="Include" />
+      <e p="FaceRecognition.csproj" t="IncludeRecursive" />
+      <e p="FaceRecognition.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="net48" t="Include">
+            <e p="App.g.cs" t="Include" />
+            <e p="FaceRecognition.AssemblyInfo.cs" t="Include" />
+            <e p="Views" t="Include">
+              <e p="ShellView.g.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Resources" t="Include">
+        <e p="haarcascade_frontalface_default.xml" t="Include" />
+      </e>
+      <e p="Source" t="Include">
+        <e p="FaceList.txt" t="Include" />
+      </e>
+      <e p="ViewModels" t="Include">
+        <e p="ShellViewModel.cs" t="Include" />
+      </e>
+      <e p="Views" t="Include">
+        <e p="ShellView.xaml" t="Include" />
+        <e p="ShellView.xaml.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

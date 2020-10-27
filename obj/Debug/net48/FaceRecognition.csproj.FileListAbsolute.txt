@@ -39,3 +39,5 @@ C:\Users\salihogun\Desktop\FaceRecognition\obj\Debug\net48\FaceRecognition.cspro
 C:\Users\salihogun\Desktop\FaceRecognition\obj\Debug\net48\FaceRecognition.csproj.CopyComplete
 C:\Users\salihogun\Desktop\FaceRecognition\obj\Debug\net48\FaceRecognition.exe
 C:\Users\salihogun\Desktop\FaceRecognition\obj\Debug\net48\FaceRecognition.pdb
+C:\Users\salihogun\Desktop\FaceRecognition\obj\Debug\net48\FaceRecognition.csprojAssemblyReference.cache
+C:\Users\salihogun\Desktop\FaceRecognition\bin\Debug\net48\Emgu.CV.Platform.NetFramework.dll
